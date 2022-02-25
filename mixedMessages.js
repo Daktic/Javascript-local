@@ -1,4 +1,5 @@
 const messages = {
+    0: 'One cup of black coffee only has one calorie.',
     1: 'The drink dates back to 800 A.D.',
     2: 'Coffee beans are technically seeds.',
     3: 'And you can eat coffee cherries as a food.',
@@ -12,9 +13,11 @@ const randomNumGen = () => {
     return Math.floor(Math.random()*8)
 }
 
-const giveMessage (string1, string2) => {
-    return `Did you know that ${string1} and ${string2}?`
+const giveMessage = (string1, string2) => {
+    let string1 = messages[randomNumGen()];
+    let string2 = messages[randomNumGen()];
+    return `Did you know that ${string1} and ${string2}?`;
 }
 
 
-console.log(randomNumGen())
+console.log(giveMessage())
